@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="description"
+        content="Artesanías Alma de Barro - tejidos, cerámicas y pinturas artesanales."
+    >
+    <title>Alma de Barro | Artesanías</title>
+
+    <!-- Hoja de estilos externa -->
+    <link rel="stylesheet" href="estilosIA.css">
+</head>
+
+<body>
+
+    <header class="encabezado">
+        <div class="contenedor">
+            <h1>Alma de Barro</h1>
+            <p class="subtitulo">Artesanías hechas a mano con identidad</p>
+
+            <nav class="navegacion" aria-label="Navegación principal">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#articulos">Artículos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="#mantenimiento">Quién mantiene el sitio</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- INICIO -->
+        <section id="inicio" class="seccion presentacion">
+            <div class="contenedor">
+                <h2>Artesanías únicas</h2>
+                <p>
+                    Descubrí una selección de piezas artesanales realizadas
+                    cuidadosamente a mano. Cada creación tiene su propio estilo,
+                    textura y personalidad.
+                </p>
+            </div>
+        </section>
+
+        <!-- ARTÍCULOS -->
+        <section id="articulos" class="seccion catalogo">
+            <div class="contenedor">
+
+                <h2>Nuestros artículos</h2>
+
+                <!-- Controles CSS -->
+                <div class="selector-categorias">
+
+                    <input
+                        type="radio"
+                        name="categoria"
+                        id="categoria-todos"
+                        checked
+                    >
+                    <label for="categoria-todos">Todos</label>
+
+                    <input
+                        type="radio"
+                        name="categoria"
+                        id="categoria-tejidos"
+                    >
+                    <label for="categoria-tejidos">Tejidos</label>
+
+                    <input
+                        type="radio"
+                        name="categoria"
+                        id="categoria-ceramicas"
+                    >
+                    <label for="categoria-ceramicas">Cerámicas</label>
+
+                    <input
+                        type="radio"
+                        name="categoria"
+                        id="categoria-pinturas"
+                    >
+                    <label for="categoria-pinturas">Pinturas</label>
+
+                </div>
+
+                <!-- TEJIDOS -->
+                <div class="grupo-categoria categoria-tejidos">
+                    <h3>Tejidos</h3>
+
+                    <div class="grilla-articulos">
+
+                        <article class="tarjeta-articulo">
+                            <img
+                                src="articulos/tejidos/articulo1.png"
+                                alt="Bufanda artesanal tejida a mano"
+                            >
+                            <div class="contenido-tarjeta">
+                                <h4>Bufanda artesanal</h4>
+                                <a
+                                    class="enlace-info"
+                                    href="articulos/tejidos/articulo1.pdf"
+                                    target="_blank"
+                                >
+                                    + Info
+                                </a>
+                            </div>
+                        </article>
+
+                        <article class="tarjeta-articulo">
+                            <img
+                                src="articulos/tejidos/articulo2.png"
+                                alt="Manta artesanal tejida a mano"
+                            >
+                            <div class="contenido-tarjeta">
+                                <h4>Manta de lana</h4>
+                                <a
+                                    class="enlace-info"
+                                    href="articulos/tejidos/articulo2.pdf"
+                                    target="_blank"
+                                >
+                                    + Info
+                                </a>
+                            </div>
+                        </article>
+
+                        <article class="tarjeta-articulo">
+                            <img
+                                src="articulos/tejidos/articulo3.png"
+                                alt="Bolso artesanal tejido"
+                            >
+                            <div class="contenido-tarjeta">
+                                <h4>Bolso tejido</h4>
+                                <a
+                                    class="enlace-info"
+                                    href="articulos/tejidos/articulo3.pdf"
+                                    target="_blank"
+                                >
+                                    + Info
+                                </a>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+
+                <!-- CERÁMICAS -->
+                <div class="grupo-categoria categoria-ceramicas">
+                    <h3>Cerámicas</h3>
+
+                    <div class="grilla-articulos">
+
+                        <article class="tarjeta-articulo">
+                            <img
+                                src="articulos/ceramicas/articulo1.png"
+                                alt="Taza de cerámica artesanal"
+                            >
+                            <div class="contenido-tarjeta">
+                                <h4>Taza artesanal</h4>
+                                <a
+                                    class="enlace-info"
+                                    href="articulos/ceramicas/articulo1.pdf"
+                                    target="_blank"
+                                >
+                                    + Info
+                                </a>
+                            </div>
+                        </article>
+
+                        <article class="tarjeta-articulo">
+                            <img
+                                src="articulos/ceramicas/articulo2.png"
+                                alt="Jarrón de cerámica artesanal"
+                            >
+                            <div class="contenido-tarjeta">
+                                <h4>Jarrón decorativo</h4>
+                                <a
+                                    class="enlace-info"
+                                    href="articulos/ceramicas/articulo2.pdf"
+                                    target="_blank"
+                                >
+                                    + Info
+                                </a>
+                            </div>
+                        </article>
+
+                        <article class="tarjeta-articulo">
+                            <img
+                                src="articulos/ceramicas/articulo3.png"
+                                alt="Plato de cerámica artesanal"
+                            >
+                            <div class="contenido-tarjeta">
+                                <h4>Plato artesanal</h4>
+                                <a
+                                    class="enlace-info"
+                                    href="articulos/ceramicas/articulo3.pdf"
+                                    target="_blank"
+                                >
+                                    + Info
+                                </a>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+
+                <!-- PINTURAS -->
+                <div class="grupo-categoria categoria-pinturas">
+                    <h3>Pinturas</h3>
+
+                    <div class="grilla-articulos">
+
+                        <article class="tarjeta-articulo">
+                            <img
+                                src="articulos/pinturas/articulo1.png"
+                                alt="Pintura artesanal de paisaje"
+                            >
+                            <div class="contenido-tarjeta">
+                                <h4>Paisaje serrano</h4>
+                                <a
+                                    class="enlace-info"
+                                    href="articulos/pinturas/articulo1.pdf"
+                                    target="_blank"
+                                >
+                                    + Info
+                                </a>
+                            </div>
+                        </article>
+
+                        <article class="tarjeta-articulo">
+                            <img
+                                src="articulos/pinturas/articulo2.png"
+                                alt="Pintura artesanal abstracta"
+                            >
+                            <div class="contenido-tarjeta">
+                                <h4>Composición abstracta</h4>
+                                <a
+                                    class="enlace-info"
+                                    href="articulos/pinturas/articulo2.pdf"
+                                    target="_blank"
+                                >
+                                    + Info
+                                </a>
+                            </div>
+                        </article>
+
+                        <article class="tarjeta-articulo">
+                            <img
+                                src="articulos/pinturas/articulo3.png"
+                                alt="Pintura artesanal floral"
+                            >
+                            <div class="contenido-tarjeta">
+                                <h4>Flores del jardín</h4>
+                                <a
+                                    class="enlace-info"
+                                    href="articulos/pinturas/articulo3.pdf"
+                                    target="_blank"
+                                >
+                                    + Info
+                                </a>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section id="contacto" class="seccion contacto">
+            <div class="contenedor">
+
+                <h2>Información de contacto</h2>
+
+                <div class="contacto-contenido">
+
+                    <div class="datos-contacto">
+                        <h3>Visitá nuestro taller</h3>
+
+                        <p>
+                            <strong>Dirección:</strong>
+                            Calle de las Artes 245, Buenos Aires
+                        </p>
+
+                        <p>
+                            <strong>Teléfono:</strong>
+                            +54 11 4567-8901
+                        </p>
+
+                        <p>
+                            <strong>Email:</strong>
+                            contacto@almadebarro.example
+                        </p>
+
+                        <p>
+                            <strong>Horario:</strong>
+                            Lunes a viernes de 10:00 a 18:00
+                        </p>
+                    </div>
+
+                    <form class="formulario-contacto" action="#" method="post">
+
+                        <div class="campo">
+                            <label for="nombre">Nombre completo</label>
+                            <input
+                                type="text"
+                                id="nombre"
+                                name="nombre"
+                                placeholder="María González"
+                                required
+                            >
+                        </div>
+
+                        <div class="campo">
+                            <label for="email">Correo electrónico</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="maria@example.com"
+                                required
+                            >
+                        </div>
+
+                        <div class="campo">
+                            <label for="telefono">Teléfono</label>
+                            <input
+                                type="tel"
+                                id="telefono"
+                                name="telefono"
+                                placeholder="+54 11 1234-5678"
+                            >
+                        </div>
+
+                        <div class="campo">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea
+                                id="mensaje"
+                                name="mensaje"
+                                rows="5"
+                                placeholder="Escribí tu consulta..."
+                                required
+                            ></textarea>
+                        </div>
+
+                        <button type="submit">
+                            Enviar consulta
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- MANTENIMIENTO -->
+        <section id="mantenimiento" class="seccion mantenimiento">
+            <div class="contenedor">
+
+                <h2>Quién mantiene el sitio</h2>
+
+                <div class="mantenimiento-card">
+
+                    <h3>Equipo Web Artesanal</h3>
+
+                    <p>
+                        <strong>Responsable:</strong>
+                        Lucía Fernández
+                    </p>
+
+                    <p>
+                        <strong>Rol:</strong>
+                        Desarrolladora y mantenedora del sitio
+                    </p>
+
+                    <p>
+                        <strong>Email:</strong>
+                        soporte@almadebarro.example
+                    </p>
+
+                    <p>
+                        <strong>Versión del sitio:</strong>
+                        1.0
+                    </p>
+
+                    <p>
+                        El sitio es mantenido y actualizado periódicamente
+                        para presentar el catálogo de artesanías y facilitar
+                        el contacto con nuestros clientes.
+                    </p>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="pie">
+        <div class="contenedor">
+            <p>
+                &copy; 2026 Alma de Barro. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>

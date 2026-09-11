@@ -1,0 +1,493 @@
+/* =========================================================
+   ESTILOS GENERALES
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: #f7f1e8;
+    color: #3f3028;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+.contenedor {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   ENCABEZADO
+   ========================================================= */
+
+.encabezado {
+    background: #5f4636;
+    color: #ffffff;
+    padding: 30px 0 0;
+}
+
+.encabezado h1 {
+    font-size: 2.6rem;
+    text-align: center;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.subtitulo {
+    text-align: center;
+    color: #ead7c2;
+    margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   NAVEGACIÓN
+   ========================================================= */
+
+.navegacion {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.navegacion ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.navegacion a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.navegacion a:hover,
+.navegacion a:focus {
+    background-color: #80624d;
+}
+
+
+/* =========================================================
+   SECCIONES
+   ========================================================= */
+
+.seccion {
+    padding: 70px 0;
+}
+
+.seccion h2 {
+    text-align: center;
+    font-size: 2.1rem;
+    margin-bottom: 20px;
+    color: #5f4636;
+}
+
+
+/* =========================================================
+   PRESENTACIÓN
+   ========================================================= */
+
+.presentacion {
+    background:
+        linear-gradient(
+            rgba(255, 255, 255, 0.70),
+            rgba(255, 255, 255, 0.70)
+        );
+    text-align: center;
+}
+
+.presentacion p {
+    max-width: 720px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+
+/* =========================================================
+   SELECTOR DE CATEGORÍAS
+   ========================================================= */
+
+.selector-categorias {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 35px 0;
+}
+
+.selector-categorias input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.selector-categorias label {
+    display: inline-block;
+    padding: 10px 22px;
+    border: 2px solid #a67c5b;
+    border-radius: 999px;
+    color: #6b4a35;
+    background-color: #ffffff;
+    cursor: pointer;
+    font-weight: bold;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.selector-categorias label:hover,
+.selector-categorias label:focus {
+    background-color: #ead7c2;
+}
+
+
+/* Estado seleccionado */
+
+#categoria-todos:checked + label,
+#categoria-tejidos:checked + label,
+#categoria-ceramicas:checked + label,
+#categoria-pinturas:checked + label {
+    background-color: #6b4a35;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   VISIBILIDAD DE CATEGORÍAS
+   ========================================================= */
+
+/*
+   Por defecto se muestran todas las categorías.
+*/
+
+.grupo-categoria {
+    display: block;
+    margin-bottom: 55px;
+}
+
+/*
+   Al elegir TEJIDOS:
+   ocultamos las demás categorías.
+*/
+
+#categoria-tejidos:checked
+    ~ .grupo-categoria:not(.categoria-tejidos) {
+    display: none;
+}
+
+/*
+   Al elegir CERÁMICAS:
+   ocultamos las demás categorías.
+*/
+
+#categoria-ceramicas:checked
+    ~ .grupo-categoria:not(.categoria-ceramicas) {
+    display: none;
+}
+
+/*
+   Al elegir PINTURAS:
+   ocultamos las demás categorías.
+*/
+
+#categoria-pinturas:checked
+    ~ .grupo-categoria:not(.categoria-pinturas) {
+    display: none;
+}
+
+
+/* =========================================================
+   TÍTULO DE CATEGORÍA
+   ========================================================= */
+
+.grupo-categoria h3 {
+    font-size: 1.7rem;
+    color: #6b4a35;
+    border-bottom: 2px solid #c7a98b;
+    margin-bottom: 25px;
+    padding-bottom: 8px;
+}
+
+
+/* =========================================================
+   GRILLA DE ARTÍCULOS
+   ========================================================= */
+
+.grilla-articulos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+
+/* =========================================================
+   TARJETAS
+   ========================================================= */
+
+.tarjeta-articulo {
+    background-color: #ffffff;
+    border: 2px solid #d2bca6;
+    border-radius: 12px;
+    padding: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 14px rgba(63, 48, 40, 0.08);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.tarjeta-articulo:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 9px 20px rgba(63, 48, 40, 0.15);
+}
+
+.tarjeta-articulo img {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background-color: #eee2d4;
+}
+
+.contenido-tarjeta {
+    text-align: center;
+}
+
+.contenido-tarjeta h4 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    color: #4f392d;
+}
+
+
+/* =========================================================
+   ENLACE + INFO
+   ========================================================= */
+
+.enlace-info {
+    display: inline-block;
+    color: #8a5634;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+}
+
+.enlace-info:hover,
+.enlace-info:focus {
+    color: #5f3720;
+    border-bottom-color: #5f3720;
+}
+
+
+/* =========================================================
+   CONTACTO
+   ========================================================= */
+
+.contacto {
+    background-color: #eadfce;
+}
+
+.contacto-contenido {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.datos-contacto,
+.formulario-contacto {
+    background-color: #ffffff;
+    border: 2px solid #d2bca6;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.datos-contacto h3 {
+    margin-bottom: 18px;
+    color: #6b4a35;
+}
+
+.datos-contacto p {
+    margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   FORMULARIO
+   ========================================================= */
+
+.formulario-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo label {
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #5f4636;
+}
+
+.campo input,
+.campo textarea {
+    width: 100%;
+    border: 1px solid #c7a98b;
+    border-radius: 7px;
+    padding: 11px 12px;
+    font: inherit;
+    color: #3f3028;
+    background-color: #fffdfa;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    outline: 2px solid #a67c5b;
+    outline-offset: 1px;
+}
+
+.campo textarea {
+    resize: vertical;
+}
+
+.formulario-contacto button {
+    border: none;
+    border-radius: 7px;
+    padding: 12px 20px;
+    background-color: #6b4a35;
+    color: #ffffff;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.formulario-contacto button:hover,
+.formulario-contacto button:focus {
+    background-color: #4f392d;
+}
+
+
+/* =========================================================
+   MANTENIMIENTO
+   ========================================================= */
+
+.mantenimiento-card {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 2px solid #d2bca6;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 5px 14px rgba(63, 48, 40, 0.08);
+}
+
+.mantenimiento-card h3 {
+    color: #6b4a35;
+    margin-bottom: 15px;
+}
+
+.mantenimiento-card p {
+    margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   PIE DE PÁGINA
+   ========================================================= */
+
+.pie {
+    background-color: #3f3028;
+    color: #ead7c2;
+    text-align: center;
+    padding: 25px 0;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLETS
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .grilla-articulos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contacto-contenido {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - CELULARES
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .encabezado h1 {
+        font-size: 2rem;
+    }
+
+    .navegacion ul {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .navegacion a {
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .seccion {
+        padding: 50px 0;
+    }
+
+    .seccion h2 {
+        font-size: 1.7rem;
+    }
+
+    .grilla-articulos {
+        grid-template-columns: 1fr;
+    }
+
+    .selector-categorias {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .selector-categorias label {
+        text-align: center;
+    }
+
+    .contacto-contenido {
+        gap: 25px;
+    }
+
+}
