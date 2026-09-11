@@ -109,12 +109,8 @@ a {
    ========================================================= */
 
 .presentacion {
-    background:
-        linear-gradient(
-            rgba(255, 255, 255, 0.70),
-            rgba(255, 255, 255, 0.70)
-        );
     text-align: center;
+    background-color: #fffaf4;
 }
 
 .presentacion p {
@@ -125,101 +121,106 @@ a {
 
 
 /* =========================================================
-   SELECTOR DE CATEGORÍAS
+   RADIO BUTTON HACK CLÁSICO
    ========================================================= */
 
-.selector-categorias {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 35px 0;
-}
+/*
+   Los radio buttons se mantienen en el HTML como estado.
+   Se ocultan visualmente y los <label> funcionan como botones.
 
-.selector-categorias input {
+   Lo importante para el hack es que los radios y los
+   .grupo-categoria sean hermanos directos dentro del mismo
+   contenedor (.contenedor).
+*/
+
+.filtro-radio {
     position: absolute;
     opacity: 0;
     pointer-events: none;
 }
 
-.selector-categorias label {
+.filtro-label {
     display: inline-block;
     padding: 10px 22px;
+    margin: 0 5px 10px;
     border: 2px solid #a67c5b;
     border-radius: 999px;
     color: #6b4a35;
     background-color: #ffffff;
     cursor: pointer;
     font-weight: bold;
-    transition:
-        background-color 0.2s ease,
-        color 0.2s ease;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.selector-categorias label:hover,
-.selector-categorias label:focus {
+.filtro-label:hover,
+.filtro-label:focus {
     background-color: #ead7c2;
 }
 
+/* Estado visual de los radios seleccionados */
 
-/* Estado seleccionado */
-
-#categoria-todos:checked + label,
-#categoria-tejidos:checked + label,
-#categoria-ceramicas:checked + label,
-#categoria-pinturas:checked + label {
+#filtro-todos:checked + .filtro-todos-label,
+#filtro-tejidos:checked + .filtro-label,
+#filtro-ceramicas:checked + .filtro-label,
+#filtro-pinturas:checked + .filtro-label {
     background-color: #6b4a35;
     color: #ffffff;
 }
 
+/*
+   FILTRADO
+
+   El operador "~" selecciona los hermanos posteriores.
+
+   Si está seleccionado "Tejidos":
+   - se ocultan Cerámicas
+   - se ocultan Pinturas
+   - Tejidos permanece visible
+
+   Si está seleccionado "Cerámicas":
+   - se ocultan Tejidos
+   - se ocultan Pinturas
+   - Cerámicas permanece visible
+
+   Si está seleccionado "Pinturas":
+   - se ocultan Tejidos
+   - se ocultan Cerámicas
+   - Pinturas permanece visible
+
+   "Todos" no tiene ninguna regla que oculte categorías.
+*/
+
+/* TEJIDOS */
+
+#filtro-tejidos:checked ~ .categoria-ceramicas,
+#filtro-tejidos:checked ~ .categoria-pinturas {
+    display: none;
+}
+
+/* CERÁMICAS */
+
+#filtro-ceramicas:checked ~ .categoria-tejidos,
+#filtro-ceramicas:checked ~ .categoria-pinturas {
+    display: none;
+}
+
+/* PINTURAS */
+
+#filtro-pinturas:checked ~ .categoria-tejidos,
+#filtro-pinturas:checked ~ .categoria-ceramicas {
+    display: none;
+}
+
 
 /* =========================================================
-   VISIBILIDAD DE CATEGORÍAS
+   GRUPOS Y ARTÍCULOS
    ========================================================= */
-
-/*
-   Por defecto se muestran todas las categorías.
-*/
 
 .grupo-categoria {
     display: block;
+    margin-top: 30px;
     margin-bottom: 55px;
 }
-
-/*
-   Al elegir TEJIDOS:
-   ocultamos las demás categorías.
-*/
-
-#categoria-tejidos:checked
-    ~ .grupo-categoria:not(.categoria-tejidos) {
-    display: none;
-}
-
-/*
-   Al elegir CERÁMICAS:
-   ocultamos las demás categorías.
-*/
-
-#categoria-ceramicas:checked
-    ~ .grupo-categoria:not(.categoria-ceramicas) {
-    display: none;
-}
-
-/*
-   Al elegir PINTURAS:
-   ocultamos las demás categorías.
-*/
-
-#categoria-pinturas:checked
-    ~ .grupo-categoria:not(.categoria-pinturas) {
-    display: none;
-}
-
-
-/* =========================================================
-   TÍTULO DE CATEGORÍA
-   ========================================================= */
 
 .grupo-categoria h3 {
     font-size: 1.7rem;
@@ -228,11 +229,6 @@ a {
     margin-bottom: 25px;
     padding-bottom: 8px;
 }
-
-
-/* =========================================================
-   GRILLA DE ARTÍCULOS
-   ========================================================= */
 
 .grilla-articulos {
     display: grid;
@@ -252,9 +248,7 @@ a {
     padding: 15px;
     overflow: hidden;
     box-shadow: 0 5px 14px rgba(63, 48, 40, 0.08);
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .tarjeta-articulo:hover {
@@ -433,7 +427,6 @@ a {
    ========================================================= */
 
 @media (max-width: 850px) {
-
     .grilla-articulos {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -441,7 +434,6 @@ a {
     .contacto-contenido {
         grid-template-columns: 1fr;
     }
-
 }
 
 
@@ -450,7 +442,6 @@ a {
    ========================================================= */
 
 @media (max-width: 600px) {
-
     .encabezado h1 {
         font-size: 2rem;
     }
@@ -477,17 +468,13 @@ a {
         grid-template-columns: 1fr;
     }
 
-    .selector-categorias {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .selector-categorias label {
+    .filtro-label {
+        display: block;
         text-align: center;
+        margin: 8px 0;
     }
 
     .contacto-contenido {
         gap: 25px;
     }
-
 }

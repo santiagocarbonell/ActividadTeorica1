@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta
         name="description"
-        content="Artesanías Alma de Barro - tejidos, cerámicas y pinturas artesanales."
+        content="Alma de Barro - artesanías en tejidos, cerámicas y pinturas."
     >
     <title>Alma de Barro | Artesanías</title>
-
-    <!-- Hoja de estilos externa -->
     <link rel="stylesheet" href="estilosIA.css">
 </head>
 
@@ -33,7 +31,6 @@
 
     <main>
 
-        <!-- INICIO -->
         <section id="inicio" class="seccion presentacion">
             <div class="contenedor">
                 <h2>Artesanías únicas</h2>
@@ -45,59 +42,74 @@
             </div>
         </section>
 
-        <!-- ARTÍCULOS -->
         <section id="articulos" class="seccion catalogo">
             <div class="contenedor">
 
                 <h2>Nuestros artículos</h2>
 
-                <!-- Controles CSS -->
-                <div class="selector-categorias">
+                <!--
+                    RADIO BUTTON HACK CLÁSICO
 
-                    <input
-                        type="radio"
-                        name="categoria"
-                        id="categoria-todos"
-                        checked
-                    >
-                    <label for="categoria-todos">Todos</label>
+                    Importante:
+                    Los radio buttons y los grupos de categorías están
+                    al mismo nivel dentro del mismo contenedor.
 
-                    <input
-                        type="radio"
-                        name="categoria"
-                        id="categoria-tejidos"
-                    >
-                    <label for="categoria-tejidos">Tejidos</label>
+                    El selector CSS "~" puede así seleccionar los grupos
+                    que aparecen DESPUÉS del radio seleccionado.
+                -->
 
-                    <input
-                        type="radio"
-                        name="categoria"
-                        id="categoria-ceramicas"
-                    >
-                    <label for="categoria-ceramicas">Cerámicas</label>
+                <input
+                    type="radio"
+                    name="categoria-filtro"
+                    id="filtro-todos"
+                    class="filtro-radio"
+                    checked
+                >
+                <label for="filtro-todos" class="filtro-label filtro-todos-label">
+                    Todos
+                </label>
 
-                    <input
-                        type="radio"
-                        name="categoria"
-                        id="categoria-pinturas"
-                    >
-                    <label for="categoria-pinturas">Pinturas</label>
+                <input
+                    type="radio"
+                    name="categoria-filtro"
+                    id="filtro-tejidos"
+                    class="filtro-radio"
+                >
+                <label for="filtro-tejidos" class="filtro-label">
+                    Tejidos
+                </label>
 
-                </div>
+                <input
+                    type="radio"
+                    name="categoria-filtro"
+                    id="filtro-ceramicas"
+                    class="filtro-radio"
+                >
+                <label for="filtro-ceramicas" class="filtro-label">
+                    Cerámicas
+                </label>
 
-                <!-- TEJIDOS -->
+                <input
+                    type="radio"
+                    name="categoria-filtro"
+                    id="filtro-pinturas"
+                    class="filtro-radio"
+                >
+                <label for="filtro-pinturas" class="filtro-label">
+                    Pinturas
+                </label>
+
                 <div class="grupo-categoria categoria-tejidos">
                     <h3>Tejidos</h3>
 
                     <div class="grilla-articulos">
-
                         <article class="tarjeta-articulo">
                             <img
                                 src="articulos/tejidos/articulo1.png"
-                                alt="Bufanda artesanal tejida a mano"
+                                alt="Manta de lana"
                             >
                             <div class="contenido-tarjeta">
-                                <h4>Bufanda artesanal</h4>
+                                <h4>Manta rústica</h4>
                                 <a
                                     class="enlace-info"
                                     href="articulos/tejidos/articulo1.pdf"
@@ -111,10 +123,10 @@
                         <article class="tarjeta-articulo">
                             <img
                                 src="articulos/tejidos/articulo2.png"
-                                alt="Manta artesanal tejida a mano"
+                                alt="Poncho andino"
                             >
                             <div class="contenido-tarjeta">
-                                <h4>Manta de lana</h4>
+                                <h4>Poncho Andino</h4>
                                 <a
                                     class="enlace-info"
                                     href="articulos/tejidos/articulo2.pdf"
@@ -128,10 +140,10 @@
                         <article class="tarjeta-articulo">
                             <img
                                 src="articulos/tejidos/articulo3.png"
-                                alt="Bolso artesanal tejido"
+                                alt="Bufanda artesanal"
                             >
                             <div class="contenido-tarjeta">
-                                <h4>Bolso tejido</h4>
+                                <h4>Bufanda de Llama</h4>
                                 <a
                                     class="enlace-info"
                                     href="articulos/tejidos/articulo3.pdf"
@@ -141,23 +153,20 @@
                                 </a>
                             </div>
                         </article>
-
                     </div>
                 </div>
 
-                <!-- CERÁMICAS -->
                 <div class="grupo-categoria categoria-ceramicas">
                     <h3>Cerámicas</h3>
 
                     <div class="grilla-articulos">
-
                         <article class="tarjeta-articulo">
                             <img
                                 src="articulos/ceramicas/articulo1.png"
-                                alt="Taza de cerámica artesanal"
+                                alt="Vasija de barro"
                             >
                             <div class="contenido-tarjeta">
-                                <h4>Taza artesanal</h4>
+                                <h4>Vasija Decorativa</h4>
                                 <a
                                     class="enlace-info"
                                     href="articulos/ceramicas/articulo1.pdf"
@@ -171,10 +180,10 @@
                         <article class="tarjeta-articulo">
                             <img
                                 src="articulos/ceramicas/articulo2.png"
-                                alt="Jarrón de cerámica artesanal"
+                                alt="Plato pintado"
                             >
                             <div class="contenido-tarjeta">
-                                <h4>Jarrón decorativo</h4>
+                                <h4>Plato Tradicional</h4>
                                 <a
                                     class="enlace-info"
                                     href="articulos/ceramicas/articulo2.pdf"
@@ -188,10 +197,10 @@
                         <article class="tarjeta-articulo">
                             <img
                                 src="articulos/ceramicas/articulo3.png"
-                                alt="Plato de cerámica artesanal"
+                                alt="Maceta esmaltada"
                             >
                             <div class="contenido-tarjeta">
-                                <h4>Plato artesanal</h4>
+                                <h4>Maceta Esmaltada</h4>
                                 <a
                                     class="enlace-info"
                                     href="articulos/ceramicas/articulo3.pdf"
@@ -201,23 +210,20 @@
                                 </a>
                             </div>
                         </article>
-
                     </div>
                 </div>
 
-                <!-- PINTURAS -->
                 <div class="grupo-categoria categoria-pinturas">
                     <h3>Pinturas</h3>
 
                     <div class="grilla-articulos">
-
                         <article class="tarjeta-articulo">
                             <img
                                 src="articulos/pinturas/articulo1.png"
-                                alt="Pintura artesanal de paisaje"
+                                alt="Cuadro paisaje"
                             >
                             <div class="contenido-tarjeta">
-                                <h4>Paisaje serrano</h4>
+                                <h4>Acuarela Paisaje</h4>
                                 <a
                                     class="enlace-info"
                                     href="articulos/pinturas/articulo1.pdf"
@@ -231,10 +237,10 @@
                         <article class="tarjeta-articulo">
                             <img
                                 src="articulos/pinturas/articulo2.png"
-                                alt="Pintura artesanal abstracta"
+                                alt="Retrato al óleo"
                             >
                             <div class="contenido-tarjeta">
-                                <h4>Composición abstracta</h4>
+                                <h4>Óleo Abstracto</h4>
                                 <a
                                     class="enlace-info"
                                     href="articulos/pinturas/articulo2.pdf"
@@ -248,10 +254,10 @@
                         <article class="tarjeta-articulo">
                             <img
                                 src="articulos/pinturas/articulo3.png"
-                                alt="Pintura artesanal floral"
+                                alt="Arte botánico"
                             >
                             <div class="contenido-tarjeta">
-                                <h4>Flores del jardín</h4>
+                                <h4>Ilustración Botánica</h4>
                                 <a
                                     class="enlace-info"
                                     href="articulos/pinturas/articulo3.pdf"
@@ -261,21 +267,17 @@
                                 </a>
                             </div>
                         </article>
-
                     </div>
                 </div>
 
             </div>
         </section>
 
-        <!-- CONTACTO -->
         <section id="contacto" class="seccion contacto">
             <div class="contenedor">
-
                 <h2>Información de contacto</h2>
 
                 <div class="contacto-contenido">
-
                     <div class="datos-contacto">
                         <h3>Visitá nuestro taller</h3>
 
@@ -283,17 +285,14 @@
                             <strong>Dirección:</strong>
                             Calle de las Artes 245, Buenos Aires
                         </p>
-
                         <p>
                             <strong>Teléfono:</strong>
                             +54 11 4567-8901
                         </p>
-
                         <p>
                             <strong>Email:</strong>
                             contacto@almadebarro.example
                         </p>
-
                         <p>
                             <strong>Horario:</strong>
                             Lunes a viernes de 10:00 a 18:00
@@ -301,7 +300,6 @@
                     </div>
 
                     <form class="formulario-contacto" action="#" method="post">
-
                         <div class="campo">
                             <label for="nombre">Nombre completo</label>
                             <input
@@ -345,55 +343,38 @@
                             ></textarea>
                         </div>
 
-                        <button type="submit">
-                            Enviar consulta
-                        </button>
-
+                        <button type="submit">Enviar consulta</button>
                     </form>
-
                 </div>
-
             </div>
         </section>
 
-        <!-- MANTENIMIENTO -->
         <section id="mantenimiento" class="seccion mantenimiento">
             <div class="contenedor">
-
                 <h2>Quién mantiene el sitio</h2>
 
                 <div class="mantenimiento-card">
-
                     <h3>Equipo Web Artesanal</h3>
-
                     <p>
                         <strong>Responsable:</strong>
                         Lucía Fernández
                     </p>
-
                     <p>
                         <strong>Rol:</strong>
                         Desarrolladora y mantenedora del sitio
                     </p>
-
                     <p>
                         <strong>Email:</strong>
                         soporte@almadebarro.example
                     </p>
-
                     <p>
-                        <strong>Versión del sitio:</strong>
-                        1.0
+                        <strong>Versión del sitio:</strong> 1.0
                     </p>
-
                     <p>
                         El sitio es mantenido y actualizado periódicamente
-                        para presentar el catálogo de artesanías y facilitar
-                        el contacto con nuestros clientes.
+                        para presentar el catálogo de artesanías.
                     </p>
-
                 </div>
-
             </div>
         </section>
 
@@ -401,9 +382,7 @@
 
     <footer class="pie">
         <div class="contenedor">
-            <p>
-                &copy; 2026 Alma de Barro. Todos los derechos reservados.
-            </p>
+            <p>&copy; 2026 Alma de Barro. Todos los derechos reservados.</p>
         </div>
     </footer>
 
