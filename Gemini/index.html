@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artesanías El Hornero</title>
+    <!-- Referencia estricta al archivo CSS externo -->
+    <link rel="stylesheet" href="estilosIA.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">Artesanías El Hornero</div>
+        <nav>
+            <ul>
+                <li><a href="#productos">Catálogo de Artesanías</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#mantenedor">Sobre Nosotros</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- SECCIÓN DE PRODUCTOS (Filtro 100% CSS) -->
+        <section id="productos">
+            <h2>Nuestras Artesanías</h2>
+            
+            <div class="filtro-contenedor">
+                <!-- Inputs de radio (ocultos por CSS) para manejar el estado -->
+                <input type="radio" id="cat-todas" name="categoria" checked>
+                <input type="radio" id="cat-tejidos" name="categoria">
+                <input type="radio" id="cat-ceramicas" name="categoria">
+                <input type="radio" id="cat-pinturas" name="categoria">
+
+                <!-- Etiquetas que actúan como botones -->
+                <div class="menu-categorias">
+                    <label for="cat-todas">Todas</label>
+                    <label for="cat-tejidos">Tejidos</label>
+                    <label for="cat-ceramicas">Cerámicas</label>
+                    <label for="cat-pinturas">Pinturas</label>
+                </div>
+
+                <!-- Grilla de artículos -->
+                <div class="grilla-articulos">
+                    
+                    <!-- TEJIDOS -->
+                    <article class="tarjeta cat-tejidos">
+                        <img src="articulos/tejidos/articulo1.png" alt="Manta de lana">
+                        <div class="tarjeta-contenido">
+                            <h3>Manta Rústica</h3>
+                            <a href="articulos/tejidos/articulo1.pdf" class="btn-info" target="_blank">+ Info</a>
+                        </div>
+                    </article>
+                    <article class="tarjeta cat-tejidos">
+                        <img src="articulos/tejidos/articulo2.png" alt="Poncho andino">
+                        <div class="tarjeta-contenido">
+                            <h3>Poncho Andino</h3>
+                            <a href="articulos/tejidos/articulo2.pdf" class="btn-info" target="_blank">+ Info</a>
+                        </div>
+                    </article>
+                    <article class="tarjeta cat-tejidos">
+                        <img src="articulos/tejidos/articulo3.png" alt="Bufanda artesanal">
+                        <div class="tarjeta-contenido">
+                            <h3>Bufanda de Llama</h3>
+                            <a href="articulos/tejidos/articulo3.pdf" class="btn-info" target="_blank">+ Info</a>
+                        </div>
+                    </article>
+
+                    <!-- CERÁMICAS -->
+                    <article class="tarjeta cat-ceramicas">
+                        <img src="articulos/ceramicas/articulo1.png" alt="Vasija de barro">
+                        <div class="tarjeta-contenido">
+                            <h3>Vasija Decorativa</h3>
+                            <a href="articulos/ceramicas/articulo1.pdf" class="btn-info" target="_blank">+ Info</a>
+                        </div>
+                    </article>
+                    <article class="tarjeta cat-ceramicas">
+                        <img src="articulos/ceramicas/articulo2.png" alt="Plato pintado">
+                        <div class="tarjeta-contenido">
+                            <h3>Plato Tradicional</h3>
+                            <a href="articulos/ceramicas/articulo2.pdf" class="btn-info" target="_blank">+ Info</a>
+                        </div>
+                    </article>
+                    <article class="tarjeta cat-ceramicas">
+                        <img src="articulos/ceramicas/articulo3.png" alt="Maceta esmaltada">
+                        <div class="tarjeta-contenido">
+                            <h3>Maceta Esmaltada</h3>
+                            <a href="articulos/ceramicas/articulo3.pdf" class="btn-info" target="_blank">+ Info</a>
+                        </div>
+                    </article>
+
+                    <!-- PINTURAS -->
+                    <article class="tarjeta cat-pinturas">
+                        <img src="articulos/pinturas/articulo1.png" alt="Cuadro paisaje">
+                        <div class="tarjeta-contenido">
+                            <h3>Acuarela Paisaje</h3>
+                            <a href="articulos/pinturas/articulo1.pdf" class="btn-info" target="_blank">+ Info</a>
+                        </div>
+                    </article>
+                    <article class="tarjeta cat-pinturas">
+                        <img src="articulos/pinturas/articulo2.png" alt="Retrato al óleo">
+                        <div class="tarjeta-contenido">
+                            <h3>Óleo Abstracto</h3>
+                            <a href="articulos/pinturas/articulo2.pdf" class="btn-info" target="_blank">+ Info</a>
+                        </div>
+                    </article>
+                    <article class="tarjeta cat-pinturas">
+                        <img src="articulos/pinturas/articulo3.png" alt="Arte botánico">
+                        <div class="tarjeta-contenido">
+                            <h3>Ilustración Botánica</h3>
+                            <a href="articulos/pinturas/articulo3.pdf" class="btn-info" target="_blank">+ Info</a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE CONTACTO -->
+        <section id="contacto" class="seccion-alterna">
+            <h2>Contacto</h2>
+            <p>¿Te interesa alguna pieza personalizada? Escribinos.</p>
+            <form action="#" class="formulario-contacto">
+                <div class="campo">
+                    <label for="nombre">Nombre Completo:</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Ej. Ana Pérez">
+                </div>
+                <div class="campo">
+                    <label for="correo">Correo Electrónico:</label>
+                    <input type="email" id="correo" name="correo" required placeholder="ana@ejemplo.com">
+                </div>
+                <div class="campo">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Consulta sobre..."></textarea>
+                </div>
+                <button type="submit" class="btn-enviar">Enviar Mensaje</button>
+            </form>
+        </section>
+
+        <!-- SECCIÓN SOBRE EL MANTENEDOR -->
+        <section id="mantenedor">
+            <h2>¿Quiénes Somos?</h2>
+            <div class="perfil-mantenedor">
+                <div class="info-mantenedor">
+                    <h3>Martín Rodríguez</h3>
+                    <p><strong>Desarrollador Web y Curador Artesanal</strong></p>
+                    <p>Este sitio es mantenido por Martín, un apasionado del diseño web estático y amante de las artesanías locales. Nuestra misión es conectar pequeños productores con personas que valoran el trabajo hecho a mano, utilizando plataformas web rápidas, accesibles y estructuradas.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Artesanías El Hornero - Diseño 100% HTML y CSS.</p>
+    </footer>
+</body>
+</html>
